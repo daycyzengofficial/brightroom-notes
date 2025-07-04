@@ -1,0 +1,148 @@
+/* 基础样式 */
+body {
+    font-family: "Helvetica Neue", "Noto Serif SC", serif;
+    background-color: #fdfcf7;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    line-height: 1.7;
+}
+
+/* 头部 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    color: #5a4c3b;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1em;
+    color: #a1887f;
+    margin-top: -10px;
+}
+
+/* 首页引用 */
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.quote {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* 导航栏 */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+}
+
+nav li {
+    position: relative;
+}
+
+/* 父菜单链接 */
+nav a {
+    text-decoration: none;
+    color: #5a4c3b;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    padding: 5px 10px;
+    display: inline-block;
+    user-select: none; /* 防止选中 */
+    transition: border-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    border-bottom: 1px solid #5a4c3b;
+}
+
+/* 作品集不可点击文本样式 */
+nav li.dropdown > span {
+    font-weight: bold;
+    color: #5a4c3b;
+    cursor: default; /* 不显示手型 */
+    user-select: none;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+/* 下拉菜单内容 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;   /* 紧贴父菜单正下方 */
+    left: 0;
+    background-color: #fdfcf7;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    margin: 0;       /* 绝对去除多余间隙 */
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+/* 下拉菜单列表项 */
+.dropdown-content li {
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* 下拉菜单链接 */
+.dropdown-content li a {
+    padding: 8px 20px;
+    color: #5a4c3b;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #eae0d4;
+}
+
+/* 显示下拉菜单 */
+nav li.dropdown:hover > ul.dropdown-content {
+    display: block;
+}
+
+/* 内容主体 */
+.content {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+/* 调整移动端友好（可选） */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav li.dropdown:hover > ul.dropdown-content {
+        position: static;
+        box-shadow: none;
+    }
+    .dropdown-content {
+        min-width: 100%;
+    }
+}
+
+/* 防止点击时菜单闪烁（可选增强） */
+nav li.dropdown > span {
+    cursor: default;
+}
