@@ -21,7 +21,36 @@
 <body>
 
 <header>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bright Room Notes</title>
+        <!-- 引入花体字体 -->
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <style>
+            h1 {
+                font-family: 'Dancing Script', cursive;
+                font-size: 64px;
+                background: linear-gradient(270deg, #ffdd55, #ff6f91, #845ec2, #00c9a7, #ffdd55);
+                background-size: 800% 800%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: sunshine 6s ease-in-out infinite;
+                text-align: center;
+                margin-top: 100px;
+            }
+
+            @keyframes sunshine {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        </style>
+    </head>
+    <body>
     <h1>Bright Room Notes</h1>
+
+
     <p class="subtitle">插画・文字・影像・创作记录</p>
 </header>
 

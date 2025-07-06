@@ -1,44 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>关于我们 - 地上室手记</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f8f4e9;
+      background-image: url('https://img.freepik.com/free-photo/old-paper-texture_1194-5412.jpg');
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: 'KaiTi', '楷体', serif;
+      color: #5a4a3a;
+    }
+
+    .main-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(248, 244, 233, 0.85);
+      border: 1px solid #d4c9b1;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .main-container::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid #d4c9b1;
+      pointer-events: none;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 5px;
+      color: #3a2e22;
+      letter-spacing: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #6d5c4a;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      border-top: 1px solid #d4c9b1;
+      border-bottom: 1px solid #d4c9b1;
+      padding: 10px 0;
+    }
+
+    nav li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5a4a3a;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #8b7355;
+    }
+
+    .content {
+      line-height: 1.8;
+      font-size: 1.1em;
+      text-align: justify;
+      padding: 0 20px;
+    }
+
+    .content p {
+      text-indent: 2em;
+      margin: 1em 0;
+    }
+
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(248, 244, 233, 0.9);
+      border-bottom: 1px solid #d4c9b1;
+      z-index: 1000;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .fixed-header a {
+      text-decoration: none;
+      color: #5a4a3a;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 5px 15px;
+      border: 1px solid #d4c9b1;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .spacer {
+      height: 60px;
+    }
+
+    /* 下拉菜单样式 */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f8f4e9;
+      min-width: 120px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border: 1px solid #d4c9b1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content li {
+      padding: 10px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #5a4a3a;
+    }
+
+    .active {
+      color: #8b7355 !important;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
-<!-- 通用导航栏 -->
-<header style="position:fixed; top:0; left:0; width:100%; background:#fff; border-bottom:1px solid #ccc; z-index:1000;">
-  <nav style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px;">
-    <a href="index.html" style="text-decoration:none; color:#333; font-weight:bold;">返回首页</a>
-  </nav>
-</header>
-<div style="height:60px;"></div> <!-- 占位避免内容被导航栏遮挡 -->
-
 <body>
-<header>
-  <h1>关于我们</h1>
-  <p class="subtitle">清水白河 × 泰晗</p>
-</header>
+<!-- 固定导航栏 -->
+<div class="fixed-header">
+  <a href="index.html">返回首页</a>
+</div>
+<div class="spacer"></div>
 
-<nav>
-  <ul>
-<!--    <li><a href="index.html">首页</a></li>-->
-    <li class="dropdown">
-      <span>作品集</span>
-      <ul class="dropdown-content">
-        <li><a href="works_text.html">文字</a></li>
-        <li><a href="works_illustration.html">插画</a></li>
-        <li><a href="works_photo.html">摄影</a></li>
-        <li><a href="works_video.html">剪辑</a></li>
-      </ul>
-    </li>
-    <li><a href="commission.html">档期</a></li>
-    <li><a href="about.html" class="active">关于我们</a></li>
-  </ul>
-</nav>
+<!-- 主要内容 -->
+<div class="main-container">
+  <header>
+    <h1>关于我们</h1>
+    <p class="subtitle">泰晗 × 清水白河</p>
+  </header>
 
-<section class="content">
-  <p>这里即将有我们的创作故事、背景和理念。</p>
-</section>
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <span>作品集</span>
+        <ul class="dropdown-content">
+          <li><a href="works_text.html">文字</a></li>
+          <li><a href="works_illustration.html">插画</a></li>
+          <li><a href="works_photo.html">摄影</a></li>
+          <li><a href="works_video.html">剪辑</a></li>
+        </ul>
+      </li>
+      <li><a href="commission.html">档期</a></li>
+      <li><a href="about.html" class="active">关于我们</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <img src="assets/双人.png" alt="装饰图" style="display: block; margin: 0 auto 20px auto; max-width: 40%; height: auto;">
+
+    <p>我们是十年的创作搭子。自相识的那一刻起，故事就悄然发生。</p>
+
+    <p>曾一起熬夜赶稿、为角色争论不休；曾一起为热爱的事物笔耕不辍、写到呕吐。我们出过本，写过信，画过图，构造过一个又一个世界（，蛐蛐过一个又一个人物）。我们一起经历了许多无人知晓但无比珍贵的瞬间。
+    </p>
+
+    <p>在彼此身上，我们看见了灵感如何被点燃，如何生长成角色、情节、图画。在漫长的创作路上，互相的存在就是前进的希望。</p>
+
+    <p>这个小站，记录的是我们十年来创作的延续。它不仅收藏我们写下的字、画下的图，也承载我们对表达、连结与想象的执念。</p>
+
+    <p>金风玉露一相逢，便胜却人间无数。</p>
+
+    <p>愿我们不断相逢。</p>
+
+    <p>（清水白河：感觉这个简直像大企业发家史。莫名其妙想到五黑框，当然我们俩都不可能去偷合同。）</p>
+
+    <p style="text-align: right; margin-right: 50px;">—— 泰晗 2025.7.6</p>
+
+
+  </section>
+</div>
 </body>
 </html>
