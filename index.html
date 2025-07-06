@@ -5,7 +5,21 @@
     <title>地上室手记 - 清水白河 × 泰晗</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
+<script>
+    function copyEmail() {
+        const email = document.getElementById("email-text").innerText;
+        navigator.clipboard.writeText(email).then(() => {
+            const status = document.getElementById("copy-status");
+            status.style.display = "block";
+            setTimeout(() => status.style.display = "none", 2000);
+        });
+    }
+</script>
+
+
 <body>
+
 <header>
     <h1>Bright Room Notes</h1>
     <p class="subtitle">插画・文字・影像・创作记录</p>
@@ -18,7 +32,7 @@
 
 <nav>
     <ul>
-<!--        <li><a href="index.html" class="active">首页</a></li>-->
+        <!-- 首页链接已注释 -->
         <li class="dropdown">
             <span>作品集</span>
             <ul class="dropdown-content">
@@ -30,8 +44,23 @@
         </li>
         <li><a href="commission.html">档期</a></li>
         <li><a href="about.html">关于我们</a></li>
-        <li><a href="contact.html">联系方式</a></li>
     </ul>
 </nav>
+
+<!-- 联系方式区块-->
+<section id="contact" style="max-width:600px; margin:60px auto; text-align:center; font-size:0.95em;">
+    <img src="assets/双人.png" alt="装饰图" style="max-width:40%; height:auto; margin-bottom:20px;">
+    <h2>联系与声明</h2>
+    <p>
+        邮箱：
+        <span id="email-text" style="font-weight:bold;">darcyzengofficial@outlook.com</span>
+        <button onclick="copyEmail()" class="copy-btn">点击复制</button>
+    </p>
+    <p id="copy-status" style="color:#4caf50; font-size:0.85em; display:none; margin-top:8px;">✓ 邮箱已复制到剪贴板</p>
+    <p>注意：无授权情况下请勿擅自转载或使用本站内容。</p>
+</section>
+
+
 </body>
+
 </html>
